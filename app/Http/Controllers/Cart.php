@@ -16,7 +16,8 @@ class Cart extends Controller
     public function generate()
     {
         $cart = new Model();
-        return $cart->generate();
+        $id = $cart->generate()->id;
+        return $cart->get($id);
     }
 
     /**

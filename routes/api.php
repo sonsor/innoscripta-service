@@ -19,7 +19,6 @@ Route::get('/pizzas/{pizza}', 'Pizza@show');
 
 Route::post('/cart', 'Cart@generate');
 Route::get('/cart/{id}', 'Cart@get');
-Route::delete('/cart/{cart}', 'Cart@get');
 Route::post('/cart/{id}/checkout', 'Cart@checkout');
 Route::post('/cart/{id}/items', 'Cart@add');
 Route::patch('/cart/{id}/items/{item}', 'Cart@update');

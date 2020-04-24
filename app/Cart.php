@@ -14,7 +14,8 @@ class Cart extends Model
         'sub_total',
         'discount',
         'shipping_cost',
-        'total'
+        'total',
+        'completed'
     ];
 
     /**
@@ -32,7 +33,9 @@ class Cart extends Model
     {
         return $this->create([
             'sub_total' => 0,
-            'total' => 0
+            'total' => 0,
+            'discount' => 0,
+            'shipping_cost' => 0,
         ]);
     }
 
