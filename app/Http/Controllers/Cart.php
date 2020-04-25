@@ -79,9 +79,8 @@ class Cart extends Controller
     public function checkout(Request $request)
     {
         $cart = new Model();
-        $cart->place(
+        return $cart->place(
             $request->id
         );
-        return ['status' => 'ok'];
     }
 }

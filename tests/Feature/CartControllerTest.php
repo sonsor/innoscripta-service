@@ -172,7 +172,7 @@ class CartControllerTest extends TestCase
         $response->assertStatus(200);
         $data = json_decode($response->getContent(), true);
 
-        $this->assertArrayHasKey('status', $data);
-        $this->assertEquals($data['status'], 'ok');
+        $this->assertArrayHasKey('items', $data);
+        $this->assertEquals(count($data['items']), 0);
     }
 }

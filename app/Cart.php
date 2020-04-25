@@ -101,6 +101,6 @@ class Cart extends Model
         $cart = $this->find($id);
         $cart->complated = true;
         $cart->save;
-        return true;
+        return $cart->get($id);
     }
 }
