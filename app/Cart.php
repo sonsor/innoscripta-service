@@ -47,7 +47,7 @@ class Cart extends Model
     {
         return $this
             ->where('id', $id)
-            ->with('items')
+            ->with('items', 'items.pizza')
             ->first();
     }
 
@@ -57,7 +57,8 @@ class Cart extends Model
      */
     public static  function calculate(int $id)
     {
-        $cart = Cart::find($id);
+        $instance = new Cart();
+        $cart = $instance->find($id);
 
         /**
          * @var int $total
@@ -88,7 +89,7 @@ class Cart extends Model
         $cart->shipping_cost = 15.00;
         $cart->total = $total + $cart->shipping_cost;
         $cart->save();
-        return $cart;
+        return $instance->get($id);
     }
 
     /**

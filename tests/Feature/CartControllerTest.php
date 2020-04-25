@@ -168,7 +168,7 @@ class CartControllerTest extends TestCase
             ['CONTENT_TYPE' => 'application/json'],
             ''
         );
-        
+
         $response->assertStatus(200);
         $data = json_decode($response->getContent(), true);
 

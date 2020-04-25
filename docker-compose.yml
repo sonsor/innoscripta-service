@@ -27,6 +27,7 @@ services:
       - DB_USERNAME=my_user
       - DB_DATABASE=my_database
       - DB_PASSWORD=my_password
+      #- APP_ENV=development
     depends_on:
       - mariadb
     ports:

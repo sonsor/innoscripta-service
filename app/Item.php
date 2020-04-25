@@ -26,6 +26,11 @@ class Item extends Model
         return $this->belongsTo(Cart::class);
     }
 
+    public function pizza()
+    {
+        return$this->hasOne(Pizza::class, 'id', 'pizza_id');
+    }
+
     /**
      * @param int $cart_id
      * @param array $data
